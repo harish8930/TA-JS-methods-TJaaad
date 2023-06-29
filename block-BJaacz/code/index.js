@@ -2,21 +2,52 @@
 
 /*
   Create a function named addTwo which accepts a number, adds 2 to the number and return the new value.
-*/
+function addTwo(num){
+let result = num+2;
+return result;}
+let addingTwo = addTwo(36)
 
 /*
   Create a function named addThree which accepts a number, adds 3 to the number and return the new value.
-*/
+*/function addThree(num){
+let result = num+3;
+return result;}
+let addingThree = addTwo(30)
+
 
 /*
   Create a function named addFive which accepts a number, adds 5 to the number and return the new value.
-*/
+*/function addFive(num){
+let result = num+5;
+return result;}
+let addiingFive = addFive(36)
+
 
 /*
   Create a function named addTwoToArray which accepts:
     - An array of numbers
     - Returns a new array where 2 is added to each element
     - While doing so use the funciton addTwo
+
+function addTwo(num){
+  return num+2;
+}
+
+  
+  let numbers = [2,4,5,7,8,9,13,15,16,17,19];
+
+function addTwoarr(arr){
+  let final = [];
+ for(num of arr){
+final.push(addTwo(num))
+ }
+ return final;
+}
+
+let finalarray = addTwoarr(numbers);
+console.log(finalarray);
+
+    
 */
 
 /*
@@ -24,6 +55,26 @@
     - an array of numbers
     - aeturns a new array where 2 is added to each element
     - while doing so use the funciton addThree
+
+function addThree(num){
+  return num+3;
+}
+
+  
+  let numbers = [2,4,5,7,8,9,13,15,16,17,19];
+
+function addThreearr(arr){
+  let final = [];
+ for(num of arr){
+final.push(addThree(num))
+ }
+ return final;
+}
+
+let finalarray = addThreearr(numbers);
+console.log(finalarray);
+
+    
 */
 
 /*
@@ -31,6 +82,24 @@
     - an array of numbers
     - aeturns a new array where 2 is added to each element
     - while doing so use the funciton addThree
+
+function addFive(num){
+  return num+5;
+}
+
+  
+  let numbers = [2,4,5,7,8,9,13,15,16,17,19];
+
+function addFivearr(arr){
+  let final = [];
+ for(num of arr){
+final.push(addFive(num))
+ }
+ return final;
+}
+
+let finalarray = addFivearr(numbers);
+console.log(finalarray);
 */
 
 /*
@@ -47,6 +116,37 @@ In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeatin
     console.log(changeArray([1, 2, 3, 4, 5, 6], addTwo)); // [3, 4, 5, 6, 7, 8]
     console.log(changeArray([1, 2, 3, 4, 5, 6], addThree)); // [4, 5, 6, 7, 8, 9]
     console.log(changeArray([1, 2, 3, 4, 5, 6], addFive)); // [6, 7, 8, 9, 10, 11]
+
+
+let numbers = [2,4,5,7,9,11,13,15,17,19,21,23,25]
+
+function addTwo(num){
+  return num+2;
+}
+
+function addThree(num){
+  return num+3;
+}
+
+function addFive(){
+  return num+5
+}
+
+
+function add(arr,cb){
+let final =[];
+  for(num of arr){
+      final.push(cb(num))
+    }
+return final;
+}
+
+let result = add(numbers,addTwo)
+console.log(result);
+let result2 = add(numbers,addThree)
+console.log(result2);
+let result3 = add(numbers,addFive)
+console.log(result3); 
 */
 
 /*
