@@ -16,19 +16,76 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
+let averagegrade = persons.reduce((acc,person)=>{
 
+return acc+person.grade
+
+
+},0)
+console.log(averagegrade/persons.length);
 // Find the average grade of male
+let filteredMale = persons.filter((person)=> person.sex === "M")
 
+let reduced = filteredMale.reduce((acc,cv)=>{
+return acc+cv.grade;
+},0)
+console.log(reduced/filteredMale.length)
 // Find the average grade of female
+let filteredfeMale = persons.filter((person)=> person.sex === "F")
 
+let reduced = filteredfeMale.reduce((acc,cv)=>{
+return acc+cv.grade;
+},0)
+console.log(reduced/filteredfeMale.length)
 // Find the highest grade
+let grade = persons.map((person)=>{
+  return person.grade
+})
 
+let sortedgrade = grade.sort((a,b)=>{
+return b-a;
+})
+console.log(sortedgrade[0])
 // Find the highest grade in male
+let filtered = persons.filter((person)=>{
+  return person.sex === "M";
+})
+
+let grade = filtered.map((person)=>{
+  return person.grade
+})
+
+let sorted = grade.sort((a,b)=>{
+return b-a;
+})
+console.log(sorted[0])
 
 // Find the highest grade in female
+let filtered = persons.filter((person)=>{
+  return person.sex === "F";
+})
+
+let grade = filtered.map((person)=>{
+  return person.grade
+})
+
+let sorted = grade.sort((a,b)=>{
+return b-a;
+})
+console.log(sorted[0])
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
+let nameJP  = persons.filter((person)=>{
+return person.name.startsWith("J") || person.name.startsWith("P")
+})
 
+let grade = nameJP.map((person)=>{
+  return person.grade
+})
+let sorted = grade.sort((a,b)=>{
+return b-a
+})
+console.log(sorted[0]);
 const fruitBasket = [
   'banana',
   'cherry',
@@ -51,7 +108,15 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-
+let objectfruit = fruitBasket.reduce((acc,cv)=>{
+  if(acc[cv]){
+    acc[cv] = acc[cv]+1;
+  }else{
+  acc[cv] = 1;
+}
+  return acc;
+},{});
+console.log(objectfruit)
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
